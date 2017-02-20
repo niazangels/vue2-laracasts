@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+	<script src="./js/vue/vue.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<style>
+		*{
+			font-family: 'Source Sans Pro'
+		}
+		.success{
+			color: #09814A;
+		}
+		.info{
+			color: #FF9F1C;
+		}
+		li:hover{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+<div id="root">
+	<h1> {{message}}</h1>
+	<p>Click to toggle</p>
+
+	<h4>Completed tasks</h4>
+	<ul>
+		<li v-for="item in completeTasks" v-text="item.description" @click="toggleCompleted" class="success"></li>
+	</ul>
+
+	<h4>Incomplete tasks</h4>
+	<ul>
+		<li v-for="item in incompleteTasks" v-text="item.description" @click="toggleCompleted" class="info"></li>
+	</ul>
+
+</div>
+
+<script>
+	new Vue({
+		el: '#root',	
+		data:{
+			message:'Vue Tasks List',
+			tasks: [
+					{description: 'Get cape', completed: true},
+					{description: 'Wear cape', completed: true},
+					{description: 'Fly', completed: true},
+					{description: 'Remove cape', completed: false},
+					{description: 'Wash cape', completed: false},
+					{description: 'Dry cape', completed: false},
+				]
+			},
+		computed: {
+			incompleteTasks: function() {
+				// return this.tasks.filter(function(task) { return ! task.completed })
+				return this.tasks.filter(task => ! task.completed)
+			},
+
+			completeTasks: function() {
+				return this.tasks.filter(function(task) { return task.completed })
+			}
+		},
+		methods: {
+			toggleCompleted: function (v) {
+				var desc = v.target.innerHTML
+				var result = this.tasks.find(task => task.description === desc)
+				result.completed = !result.completed
+			}
+		}
+
+	}) 
+</script>
+
+</body>
+</html>

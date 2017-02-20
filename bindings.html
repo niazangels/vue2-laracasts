@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+	<script src="./js/vue/vue.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<style>
+		*{
+			font-family: 'Source Sans Pro'
+		}
+		.danger{
+			color:#E71D36;
+		}
+		.success{
+			color: #09814A;
+		}
+		.info{
+			color: #FF9F1C;
+		}
+	</style>
+</head>
+<body>
+
+<div id="root">
+	<input type="text" v-model="className" autofocus>
+	<h1 :class="className"> The class name is "{{className}}"</h1>
+	<p>Choose between info, danger, and success</p>
+</div>
+
+<script>
+	new Vue({
+		el: '#root',	
+		data:{
+			className:''
+			}
+
+	}) 
+</script>
+
+</body>
+</html>
