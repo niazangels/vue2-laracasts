@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+	<script src="./js/vue/vue.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="./css/bulma.css" rel="stylesheet">
+	<style>
+		*{
+			font-family: 'Source Sans Pro'
+		}
+		body{
+			padding-top: 100px;
+			padding-left: 50px;
+		}
+	</style>
+</head>
+<body>
+
+<div id="root">
+	<button @click="showModal=true" class="button is-primary is-outlined">Show Modal</button>
+  	<modal v-if="showModal" @close="showModal=false">
+  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, illo id alias harum repellat maxime, temporibus maiores autem molestias tempora mollitia aperiam libero necessitatibus! Quod cum officia aspernatur eos magnam.</p>
+  	</modal>
+</div>
+
+<script src="./js/pages/components-4.js"></script>
+</body>
+</html>
