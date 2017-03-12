@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+	<script src="./js/vue/vue.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<style>
+		*{
+			font-family: 'Source Sans Pro';
+		}
+
+		input{
+			padding: 10px;
+			font-size: 14px;
+			width: 40%;
+		}
+
+		span{
+			color:#14CC60;
+		}
+	</style>
+</head>
+<body>
+
+<h1>Event dispatcher FTW</h1>
+<p>You're no longer limited to parent-child communication!</p>
+<div id="root">
+	<coupon></coupon>
+	<h3 v-if="couponApplied">Hooray! Your coupon <span>{{couponApplied}}</span> was applied</h3>
+</div>
+
+<script src="./js/pages/component-communication-2.js"></script>
+</body>
+</html>

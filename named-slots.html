@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+	<script src="./js/vue/vue.js"></script>
+	<link rel="stylesheet" href="./css/bulma.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<style>
+		*{
+			font-family: 'Source Sans Pro';
+		}
+	</style>
+</head>
+<body>
+
+<div id="root">
+	<modal>
+		<template slot="title">This is Sparta!</template>
+		
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae unde, repellat temporibus illo quod officiis, obcaecati porro. Unde atque temporibus nisi tenetur animi, optio adipisci sed eum culpa, fugiat, quam.
+
+		<!-- Comment the following template to view the default footer -->
+		<template slot="footer">
+		  <a class="button is-danger">Save no one!</a> 
+	      <a class="button">Cancel</a> 
+		</template>
+	</modal>
+</div>
+
+<script src="./js/pages/named-slots.js"></script>
+</body>
+</html>

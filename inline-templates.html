@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+	<script src="./js/vue/vue.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<style>
+		*{
+			font-family: 'Source Sans Pro';
+		}
+
+		span{
+			color:#E4572E;
+		}
+
+		a{
+			background: #403F4C;
+			color: #eee;
+			padding: 8px;
+			text-decoration: none;
+			border-radius: 3px
+		}
+	</style>
+</head>
+<body>
+
+<div id="root" class="container">
+	<punch-view inline-template> 
+		<div>
+			<h1>You have taken <span>{{punch_counter}}</span> punches</h1>
+			<a href="#" class="button is-danger" @click="punch_counter += 10">Take some punches</a>
+		</div>
+	</punch-view>	
+</div>
+
+<script src="./js/pages/inline-templates.js"></script>
+</body>
+</html>
